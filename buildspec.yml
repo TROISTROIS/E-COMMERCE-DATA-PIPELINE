@@ -1,0 +1,23 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      python: 3.11
+    commands:
+      - echo "Installing dependencies..."
+      - pip install psycopg2-binary -t lib
+      - pip install -r requirements.txt -t lib
+  build:
+    commands:
+      - echo "Zipping deployment package..."
+      - cd lib
+      - zip -r9 ../deployment_package.zip .
+      - cd ..
+      - zip -g deployment_package.zip *.py
+  post_build:
+    commands:
+      - echo "Uploading to S3..."
+      - aws s3 cp deployment_package.zip s3://e-commerce-cicd-builds/
+      - echo "Updating Lambda function via S3..."
+      - aws lambda update-function-code --function-name e-commerce-mock-data-generator --s3-bucket e-commerce-cicd-builds --s3-key deployment_package.zip
+      - echo "Deployment complete!"
