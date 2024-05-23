@@ -1,10 +1,13 @@
 import boto3
+from datetime import datetime
 
 s3 = boto3.client("s3")
 bucket_name = "e-commerce-bucket-fn"
 
 def upload_to_s3(filename, current_date):
     """Uploads a CSV file to S3 with Hive-style partitioning"""
+
+    current_date = datetime.strptime(current_date, '%Y-%m-%d').date()
     # Extract year, month, day from current_date
     year = current_date.year
     month = current_date.month
