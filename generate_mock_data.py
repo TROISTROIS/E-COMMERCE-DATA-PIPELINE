@@ -117,7 +117,7 @@ fieldnames=["transaction_id", "customer_id", "product_id",
              "quantity", "price", "date",
               "payment_type", "status"]
 def write_to_csv_n(data, filename):
-    with open(filename, "w", newline="") as filen:
+    with open(filename, "w", newline="", extrasaction='ignore') as filen:
 
         writer = csv.DictWriter(filen, fieldnames=fieldnames)
         writer.writeheader()
