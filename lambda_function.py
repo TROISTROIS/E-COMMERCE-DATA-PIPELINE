@@ -18,6 +18,7 @@ def lambda_handler(event, context):
         for file in files:
             upload_to_s3(f"{file}", start_date)
 
+
     return {
         'statusCode': 200,
         'body': json.dumps(f'Data Successfully Dumped in S3')
