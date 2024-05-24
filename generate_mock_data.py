@@ -125,7 +125,7 @@ def write_to_csv_n(data, filename):
     return
 
 def write_to_csv2(data, filename):
-    with open(filename, "w", newline="", extrasaction='ignore') as file1:
+    with open(filename, "w", newline="") as file1:
         writer = csv.DictWriter(file1, fieldnames=["product_id", "product_name", "category",
                                                   "price", "supplier_id"], extrasaction='ignore')
         writer.writeheader()
@@ -143,7 +143,7 @@ def write_to_csv3(data, filename):
 def generate_data(current_date, date_str):
     transactions = generate_transactions(transactions_per_day, current_date)
     write_to_csv(transactions, f"/tmp/full_transactions.csv")
-    write_to_csv(transactions, f"/tmp/transactions_{date_str}.csv")
+    write_to_csv_n(transactions, f"/tmp/transactions_{date_str}.csv")
     write_to_csv2(transactions, f"/tmp/dim_products.csv")
     write_to_csv3(transactions, f"/tmp/dim_customers.csv")
     print(f"Generated mock transaction data transactions_{date_str}.csv and saved in csv files")
