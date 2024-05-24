@@ -119,7 +119,7 @@ fieldnames=["transaction_id", "customer_id", "product_id",
 def write_to_csv_n(data, filename):
     with open(filename, "w", newline="") as filen:
 
-        writer = csv.DictWriter(filen, fieldnames=fieldnames, extrasaction='ignore')
+        writer = csv.DictWriter(filen, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(data)
     return
@@ -127,15 +127,15 @@ def write_to_csv_n(data, filename):
 def write_to_csv2(data, filename):
     with open(filename, "w", newline="", extrasaction='ignore') as file1:
         writer = csv.DictWriter(file1, fieldnames=["product_id", "product_name", "category",
-                                                  "price", "supplier_id"])
+                                                  "price", "supplier_id"], extrasaction='ignore')
         writer.writeheader()
         writer.writerows(data)
     return
 
 def write_to_csv3(data, filename):
-    with open(filename, "w", newline="", extrasaction='ignore') as file2:
+    with open(filename, "w", newline="") as file2:
         writer = csv.DictWriter(file2, fieldnames=["customer_id", "first_name", "last_name",
-                                                  "email", "membership_level"])
+                                                  "email", "membership_level"], extrasaction='ignore')
         writer.writeheader()
         writer.writerows(data)
     return
