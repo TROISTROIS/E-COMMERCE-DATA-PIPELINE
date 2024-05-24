@@ -4,7 +4,7 @@ from upload_to_s3 import upload_to_s3
 from datetime import date, timedelta
 
 # Define date range (modify as needed)
-start_date = date(2024, 5, 18)  # Adjust start date
+start_date = date(2024, 5, 19)  # Adjust start date
 end_date = date.today()
 
 def lambda_handler(event, context):
@@ -15,8 +15,9 @@ def lambda_handler(event, context):
         generate_data(current_date, date_str)
         # Upload the generated CSV to S3
         files = ["full_transactions.csv", "dim_products.csv", "dim_customers.csv", f'transactions_{date_str}.csv']
-        for file in files:
-            upload_to_s3(f"{file}", start_date)
+        for file in files[:-1]:
+            upload_to_s3(f"raw_data/{file}", start_date)
+        upload_to_s3(f"transactions_{date_str}.csv", current_date)
 
 
     return {
