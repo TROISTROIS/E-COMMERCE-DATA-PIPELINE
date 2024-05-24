@@ -14,7 +14,7 @@ def lambda_handler(event, context):
         date_str = str(current_date)
         generate_data(current_date, date_str)
         # Upload the generated CSV to S3
-        files = ["full_transactions.csv", "transactions_{date_str}.csv", "dim_products.csv", "dim_customers.csv"]
+        files = ["full_transactions.csv", "dim_products.csv", "dim_customers.csv", f'transactions_{date_str}.csv']
         for file in files:
             upload_to_s3(f"{file}", start_date)
 
