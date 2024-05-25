@@ -63,9 +63,11 @@ def get_product_price(product_id):
     else:
         return 0.00
 # suppliers
-fake.add_provider(company)
-suppliers = [fake.unique.company() for y in range(5)]
-assert len(set(suppliers)) == len(suppliers)
+supplier_ids = []
+for _ in range(10):
+    ids = fake.bothify(text='S###')
+    supplier_ids.append(ids)
+assert len(set(supplier_ids)) == len(supplier_ids)
 
 def generate_one_transaction(customer_id, current_date):
     if customer_id not in transaction_information:
@@ -93,7 +95,7 @@ def generate_one_transaction(customer_id, current_date):
     transaction_data["date"] = transaction_date
     transaction_data["category"] = choice(list(product_names.keys()))
     transaction_data["product_name"] = choice(product_names[transaction_data["category"]])
-    transaction_data["supplier_id"] = choice(suppliers)
+    transaction_data["supplier_id"] = choice(supplier_ids)
 
     return transaction_data
 
