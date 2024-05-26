@@ -2,13 +2,15 @@ import csv
 import random
 from random import randint, choice
 from faker import Faker
-from faker.providers import company
 
 fake = Faker()
 
 # Define Customer IDS
-customer_ids = [fake.unique.bothify(text='C#####') for _ in range(20)]
-assert len(set(customer_ids)) == len(customer_ids)
+customer_ids = ['C98796', 'C11370', 'C43891', 'C56493', 'C48310', 'C45282', 'C03014', 'C26165',
+                'C03708', 'C80280', 'C67165', 'C33864', 'C78927', 'C60501', 'C56743', 'C74095',
+                'C57289', 'C20167', 'C52001', 'C38698', 'C53088', 'C21608', 'C51388', 'C91479',
+                'C43210', 'C63128', 'C31773', 'C00874', 'C40138', 'C73559', 'C70611', 'C55560',
+                'C48051', 'C73868', 'C17438', 'C74641', 'C02527', 'C03140', 'C37814', 'C05673']
 
 membership_levels = ["Bronze", "Silver", "Gold", "Platinum"]
 payment_method = ["Credit Card", "Debit Card","PayPal", "Bank Transfer", "Cash on Delivery", "Digital Wallet"]
@@ -22,31 +24,30 @@ product_names = {
     'Sports': ['Football', 'Tennis Racket', 'Basketball', 'Yoga Mat', 'Running Shoes']
 }
 
-#
-# # Pick a random product and its category
-# for _ in range(10):
-#     category, product = pick_random_product()
-#
-#     print(f"Category: {category}, Product: {product}")
 
 # Define the number of transactions per day
-transactions_per_day = 17
+transactions_per_day = 20
 
 transaction_information = {}
 
 # List of video games for sale
-products = []
-for _ in range(20):
-    prods = fake.bothify(text='P#####')
-    products.append(prods)
-assert len(set(products)) == len(products)
+products = ['P27675', 'P78718', 'P57166', 'P71758', 'P53184', 'P77619', 'P13500', 'P45728', 'P63773',
+            'P34073', 'P84709', 'P56157', 'P91214', 'P88796', 'P98388', 'P98064', 'P10145', 'P95364',
+            'P30910', 'P88761', 'P28637', 'P61843', 'P42988', 'P64509', 'P39651', 'P16193', 'P87851',
+            'P84789', 'P31454', 'P58441', 'P79335', 'P86088', 'P40467', 'P42058', 'P28213', 'P22763',
+            'P42894', 'P52797', 'P73971', 'P68472', 'P32543', 'P66616', 'P09232', 'P61865', 'P28043',
+            'P15455', 'P19433', 'P92095', 'P67595', 'P17174', 'P54208', 'P79126', 'P68010', 'P54376',
+            'P71777', 'P22919', 'P81116', 'P57423', 'P76938', 'P20111', 'P26976', 'P77782', 'P94982',
+            'P89863', 'P05248', 'P11528', 'P71849', 'P65337', 'P05102', 'P51525', 'P05591', 'P40919',
+            'P04960', 'P96519', 'P84696', 'P90100', 'P91078', 'P12023', 'P34232', 'P12813', 'P52505',
+            'P95115', 'P74826', 'P90348', 'P35586', 'P47539', 'P13178', 'P27010', 'P65600', 'P54052',
+            'P19495','P14648', 'P15736', 'P55498', 'P23140', 'P89803', 'P36174', 'P56672', 'P63055',
+            'P72730']
 
-# Assign prices to each video game
+# Assign prices to each product
 product_with_prices = {product: round(random.uniform(20, 100), 2) for product in products}
-#
-# # Print the products with their prices
-# for product, price in product_with_prices.items():
-#     print(f"{product}: ${price}")
+
+#  Print the products with their prices
 customer_names = {
     "first_names": [fake.unique.first_name() for _ in range(20)],
     "last_names": [fake.unique.last_name() for _ in range(20)]
@@ -62,6 +63,18 @@ def get_product_price(product_id):
         return product_with_prices[product_id]
     else:
         return 0.00
+
+product_price_category = {}
+
+for product_id in products:
+    category = random.choice(list(product_names.keys()))
+    product_name = random.choice(product_names[category])
+    product_price_category[product_id] = {
+        "category": category,
+        "product_name": product_name,
+        "price": get_product_price(product_id)
+    }
+
 # suppliers
 supplier_ids = []
 for _ in range(10):
@@ -89,12 +102,12 @@ def generate_one_transaction(customer_id, current_date):
     transaction_data["payment_type"] = choice(payment_method)
     transaction_data["status"] = choice(delivery_status)
     transaction_date = str(current_date)
-    transaction_data["product_id"] = choice(products)
-    price = get_product_price(transaction_data["product_id"])
+    transaction_data["product_id"] = random.choice(products)
+    transaction_data["category"] = product_price_category.get(transaction_data["product_id"], {}).get("category", None)
+    price = product_price_category.get(transaction_data["product_id"], {}).get("price", None)
+    transaction_data["product_name"] = product_price_category.get(transaction_data["product_id"], {}).get("product_name", None)
     transaction_data["price"] = round((price * transaction_data["quantity"]),2)
     transaction_data["date"] = transaction_date
-    transaction_data["category"] = choice(list(product_names.keys()))
-    transaction_data["product_name"] = choice(product_names[transaction_data["category"]])
     transaction_data["supplier_id"] = choice(supplier_ids)
 
     return transaction_data
@@ -150,4 +163,5 @@ def generate_data(current_date, date_str):
     write_to_csv3(transactions, f"/tmp/dim_customers.csv")
     print(f"Generated mock transaction data transactions_{date_str}.csv and saved in csv files")
     return
+
 # working
