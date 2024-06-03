@@ -2,7 +2,7 @@ import boto3
 from datetime import datetime
 
 s3 = boto3.client("s3")
-bucket_name = "e-commerce-bucket-fn"
+bucket_name = "your-bucket"
 
 def upload_to_s3(filename, current_date, path=f"transactions/"):
     """Uploads a CSV file to S3 with Hive-style partitioning"""
