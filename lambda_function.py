@@ -4,7 +4,7 @@ from upload_to_s3 import upload_to_s3
 from datetime import date, timedelta
 
 # Define date range (modify as needed)
-start_date = date(2024, 5, 19)  # Adjust start date
+start_date = date(2024, 5, 28)  # Adjust start date
 end_date = date.today()
 
 def lambda_handler(event, context):
