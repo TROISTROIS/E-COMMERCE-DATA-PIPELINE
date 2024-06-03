@@ -1,0 +1,31 @@
+customer_id,transaction_id,first_name,last_name,email,membership_level,product_id,product_name,category,quantity,price,supplier_id,date,payment_type,status
+C67165,TXN875069012,Kenneth,Booker,kenneth.booker@white-russell.biz,Bronze,P96519,Tennis Racket,Sports,4,379.72,S680,2024-05-26,Digital Wallet,Returned
+C03708,TXN257538156,Lance,Thompson,lance.thompson@smith.net,Silver,P72730,Biography,Books,1,25.27,S680,2024-05-26,Credit Card,Delivered
+C70611,TXN568259260,Zachary,Jackson,zachary.jackson@ferguson-evans.com,Platinum,P42988,Cookware Set,Home & Kitchen,1,49.42,S352,2024-05-26,Debit Card,Delayed
+C40138,TXN707023808,Eric,Bryant,eric.bryant@lynn.com,Silver,P42988,Cookware Set,Home & Kitchen,3,148.26,S923,2024-05-26,Bank Transfer,Delayed
+C48051,TXN662853872,Julia,Murray,julia.murray@brown.com,Bronze,P11528,Smartphone,Electronics,1,57.36,S680,2024-05-26,PayPal,Delayed
+C05673,TXN838624041,Jose,Lopez,jose.lopez@rodriguez-smith.org,Bronze,P16193,Tennis Racket,Sports,2,172.08,S923,2024-05-26,Debit Card,Shipped
+C60501,TXN952465534,Matthew,Jones,matthew.jones@estrada.biz,Platinum,P94982,Smartphone,Electronics,1,64.78,S424,2024-05-26,Credit Card,Delivered
+C20167,TXN181151358,Sandra,Johnson,sandra.johnson@acosta-johnson.com,Gold,P56157,Tablet,Electronics,5,450.1,S424,2024-05-26,Debit Card,Cancelled
+C43210,TXN803740357,Julia,Riddle,julia.riddle@jackson-vang.com,Platinum,P90100,Jacket,Clothing,3,136.02,S321,2024-05-26,Credit Card,Shipped
+C98796,TXN426740620,Bobby,Turner,bobby.turner@hill.net,Bronze,P57166,Tennis Racket,Sports,5,102.95,S923,2024-05-26,Credit Card,Cancelled
+C48051,TXN750332110,Julia,Murray,julia.murray@brown.com,Bronze,P17174,Basketball,Sports,1,21.64,S501,2024-05-26,Debit Card,Returned
+C20167,TXN950928774,Sandra,Johnson,sandra.johnson@acosta-johnson.com,Gold,P63773,Smartphone,Electronics,3,159.0,S501,2024-05-26,Digital Wallet,Shipped
+C26165,TXN151771917,Derek,Simmons,derek.simmons@dudley.biz,Silver,P34073,Dress,Clothing,5,480.8,S680,2024-05-26,Debit Card,Delivered
+C43891,TXN631115445,Jeremy,Murray,jeremy.murray@parrish-webb.org,Platinum,P19433,Non-Fiction,Books,1,37.74,S352,2024-05-26,PayPal,Delivered
+C73868,TXN993780633,Tommy,Simmons,tommy.simmons@franco.com,Silver,P84709,Dress,Clothing,4,121.12,S424,2024-05-26,Bank Transfer,Delivered
+C67165,TXN978155239,Kenneth,Booker,kenneth.booker@white-russell.biz,Bronze,P55498,Tennis Racket,Sports,2,156.76,S923,2024-05-26,PayPal,Shipped
+C53088,TXN163515700,Zachary,Henderson,zachary.henderson@curry.com,Bronze,P26976,Non-Fiction,Books,1,29.34,S326,2024-05-26,PayPal,Cancelled
+C02527,TXN213407942,Bobby,Chapman,bobby.chapman@chen.biz,Platinum,P52797,Laptop,Electronics,3,130.56,S680,2024-05-26,Digital Wallet,Cancelled
+C56743,TXN333365259,Susan,Booker,susan.booker@hernandez.info,Platinum,P90100,Jacket,Clothing,5,226.7,S424,2024-05-26,Debit Card,Returned
+C33864,TXN693456699,Jeremy,Turner,jeremy.turner@harris-burch.net,Platinum,P28043,Biography,Books,5,192.8,S611,2024-05-26,PayPal,Delivered
+C70611,TXN663836268,Zachary,Jackson,zachary.jackson@ferguson-evans.com,Platinum,P45728,Sneakers,Clothing,3,81.12,S326,2024-05-26,PayPal,Cancelled
+C31773,TXN669540238,Eric,Henderson,eric.henderson@bradley.org,Gold,P05102,Football,Sports,1,35.66,S435,2024-05-26,PayPal,Cancelled
+C26165,TXN836122390,Derek,Simmons,derek.simmons@dudley.biz,Silver,P72730,Biography,Books,5,126.35,S670,2024-05-26,PayPal,Delivered
+C20167,TXN318908324,Sandra,Johnson,sandra.johnson@acosta-johnson.com,Gold,P28043,Biography,Books,5,192.8,S424,2024-05-26,Bank Transfer,Cancelled
+C52001,TXN451680051,Matthew,Jones,matthew.jones@saunders.com,Gold,P81116,Camera,Electronics,3,119.43,S435,2024-05-26,Bank Transfer,Delayed
+C48310,TXN074064743,Sandra,Thompson,sandra.thompson@nelson-jones.info,Platinum,P19495,Smartphone,Electronics,4,335.12,S352,2024-05-26,Bank Transfer,Delayed
+C80280,TXN476813026,Kenneth,Diaz,kenneth.diaz@stevens.com,Bronze,P47539,Headphones,Electronics,3,189.27,S424,2024-05-26,Bank Transfer,Cancelled
+C37814,TXN760955136,Matthew,Holden,matthew.holden@alvarez-arroyo.com,Gold,P88796,Jacket,Clothing,4,262.16,S611,2024-05-26,Debit Card,Delayed
+C00874,TXN244817290,Julia,Booker,julia.booker@quinn.com,Bronze,P76938,Non-Fiction,Books,3,199.68,S923,2024-05-26,PayPal,Returned
+C48310,TXN749045857,Sandra,Thompson,sandra.thompson@nelson-jones.info,Platinum,P96519,Tennis Racket,Sports,5,474.65,S501,2024-05-26,Debit Card,Returned
