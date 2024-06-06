@@ -6,5 +6,7 @@ system using AWS services such as S3, Lambda, Glue, Redshift, EventBridge Rule, 
 validate, and upsert data into Amazon Redshift for analytical purposes.
 
 ## Project Architecture
-<img_src = "https://github.com/TROISTROIS/E-COMMERCE-DATA-PIPELINE/blob/main/e-commerce%20data%20pipeline.jpeg" alt="Alternative text" /> 
+<img src = "https://github.com/TROISTROIS/E-COMMERCE-DATA-PIPELINE/blob/main/e-commerce%20data%20pipeline.jpeg" alt="Alternative text " /> 
 <br>
+
+
